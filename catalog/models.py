@@ -4,38 +4,36 @@ from django.db.models import UniqueConstraint # constrains field values to be un
 from django.db.models.functions import Lower # returns field value as lower cased
 
 # Create your models here.
-class Material(models.Model):
+class MaterialCategory(models.Model):
     """Represents construction material, i.e. cement, steel,
      sand, crush, bricks, building & finishing."""
     MATERIAL_TYPE = (
         ('b', 'Select Material'),
-        ('b', 'Batteries'),
-        ('c', 'Cement'),
-        ('cw', 'Cables & Wires'),
-        ('ep', 'Electrical Panels'),
-        ('gc', 'Gravel & Crush'),
-        ('p', 'Paints'),
-        ('pf', 'Pipes & Fittings'),
-        ('s', 'Steel'),
-        ('sp', 'Solar Panels'),
+        ('Batteries', 'Batteries'),
+        ('Cement', 'Cement'),
+        ('Cables & Wires', 'Cables & Wires'),
+        ('Electrical Panels', 'Electrical Panels'),
+        ('Gravel & Crush', 'Gravel & Crush'),
+        ('Paints', 'Paints'),
+        ('Pipes & Fittings', 'Pipes & Fittings'),
+        ('Steel', 'Steel'),
+        ('Solar Panels', 'Solar Panels'),
     )
-    material = models.CharField(
-        max_length=2,
+    material_category = models.CharField(
+        max_length=20,
         choices=MATERIAL_TYPE,
         blank=True,
         default='b',
-        help_text="Select selling material."
+        help_text="Select material from list."
     )
     brand = models.CharField(max_length=200)
-    purchase_price = models.FloatField(null=True, blank=True)
-    selling_price = models.FloatField(null=True, blank=True)
 
     def __str__(self):
-        return self.material
+        return self.material_category
     def get_absolute_url(self):
         return reverse('material-detail', args=[str(self.id)])
     class Meta:
-        ordering = ['material']
+        ordering = ['material_category']
 
 class Sellor(models.Model):
     """Represents the seller providing materials pertaining to construction projects."""
@@ -49,7 +47,7 @@ class Sellor(models.Model):
     city = models.CharField(max_length=100,null=True, blank=True)
     network = models.CharField(max_length=200,null=True, blank=True)
     cell = models.CharField(max_length=200,null=True, blank=True)
-    material = models.ForeignKey(Material,
+    material = models.ForeignKey(MaterialCategory,
                                  on_delete=models.RESTRICT,
                                  null=True,
                                  help_text='Select Material you carry.')
