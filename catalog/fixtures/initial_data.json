@@ -1,0 +1,187 @@
+[
+  {
+    "model": "catalog.store",
+    "pk": 1,
+    "fields": {"name": "Mega Construction Store", "location": "Lahore"}
+  },
+  {
+    "model": "catalog.store",
+    "pk": 2,
+    "fields": {"name": "Builder's Depot", "location": "Karachi"}
+  },
+
+  {
+    "model": "catalog.category",
+    "pk": 1,
+    "fields": {"name": "Cement"}
+  },
+  {
+    "model": "catalog.category",
+    "pk": 2,
+    "fields": {"name": "Sand"}
+  },
+  {
+    "model": "catalog.category",
+    "pk": 3,
+    "fields": {"name": "Concrete"}
+  },
+  {
+    "model": "catalog.category",
+    "pk": 4,
+    "fields": {"name": "Bricks"}
+  },
+  {
+    "model": "catalog.category",
+    "pk": 5,
+    "fields": {"name": "Pipes"}
+  },
+  {
+    "model": "catalog.category",
+    "pk": 6,
+    "fields": {"name": "Steel"}
+  },
+  {
+    "model": "catalog.category",
+    "pk": 7,
+    "fields": {"name": "Paint"}
+  },
+  {
+    "model": "catalog.category",
+    "pk": 8,
+    "fields": {"name": "Cables"}
+  },
+
+  {
+    "model": "catalog.brand",
+    "pk": 1,
+    "fields": {"name": "Lucky Cement", "category": 1}
+  },
+  {
+    "model": "catalog.brand",
+    "pk": 2,
+    "fields": {"name": "Fauji Cement", "category": 1}
+  },
+  {
+    "model": "catalog.brand",
+    "pk": 3,
+    "fields": {"name": "River Sand Co", "category": 2}
+  },
+  {
+    "model": "catalog.brand",
+    "pk": 4,
+    "fields": {"name": "Red Bricks Inc", "category": 4}
+  },
+  {
+    "model": "catalog.brand",
+    "pk": 5,
+    "fields": {"name": "PVC Pipes Ltd", "category": 5}
+  },
+  {
+    "model": "catalog.brand",
+    "pk": 6,
+    "fields": {"name": "Steel Works", "category": 6}
+  },
+  {
+    "model": "catalog.brand",
+    "pk": 7,
+    "fields": {"name": "Acrylic Paints", "category": 7}
+  },
+  {
+    "model": "catalog.brand",
+    "pk": 8,
+    "fields": {"name": "Copper Cables Co", "category": 8}
+  },
+
+  {
+    "model": "catalog.item",
+    "pk": 1,
+    "fields": {"name": "Lucky Cement 50kg", "brand": 1, "store": 1, "is_active": true}
+  },
+  {
+    "model": "catalog.item",
+    "pk": 2,
+    "fields": {"name": "Fauji Cement 50kg", "brand": 2, "store": 2, "is_active": true}
+  },
+  {
+    "model": "catalog.item",
+    "pk": 3,
+    "fields": {"name": "River Sand Fine", "brand": 3, "store": 1, "is_active": true}
+  },
+  {
+    "model": "catalog.item",
+    "pk": 4,
+    "fields": {"name": "Red Clay Brick", "brand": 4, "store": 1, "is_active": true}
+  },
+  {
+    "model": "catalog.item",
+    "pk": 5,
+    "fields": {"name": "PVC Pipe 50mm", "brand": 5, "store": 2, "is_active": true}
+  },
+  {
+    "model": "catalog.item",
+    "pk": 6,
+    "fields": {"name": "Rebar Steel 12mm", "brand": 6, "store": 1, "is_active": true}
+  },
+  {
+    "model": "catalog.item",
+    "pk": 7,
+    "fields": {"name": "Acrylic White Paint 5L", "brand": 7, "store": 2, "is_active": true}
+  },
+  {
+    "model": "catalog.item",
+    "pk": 8,
+    "fields": {"name": "Copper Wire 2.5mm2", "brand": 8, "store": 1, "is_active": true}
+  },
+
+  {
+    "model": "catalog.storeitem",
+    "pk": 1,
+    "fields": {"store": 1, "item": 1, "price": "750.00", "stock_quantity": "100.00", "reorder_point": "10.00", "sku": "LC50-1", "barcode": "1234567890123"}
+  },
+  {
+    "model": "catalog.storeitem",
+    "pk": 2,
+    "fields": {"store": 2, "item": 2, "price": "740.00", "stock_quantity": "50.00", "reorder_point": "5.00", "sku": "FC50-2", "barcode": "1234567890124"}
+  },
+
+  {
+    "model": "catalog.cementattributes",
+    "pk": 1,
+    "fields": {"item": 1, "grade": "OPC", "weight_per_bag_kg": "50.00", "setting_time_min": 120, "compressive_strength_mpa": "30.00"}
+  },
+  {
+    "model": "catalog.cementattributes",
+    "pk": 2,
+    "fields": {"item": 2, "grade": "OPC", "weight_per_bag_kg": "50.00", "setting_time_min": 125, "compressive_strength_mpa": "28.00"}
+  },
+  {
+    "model": "catalog.sandattributes",
+    "pk": 1,
+    "fields": {"item": 3, "sand_type": "Fine", "grain_size_mm": "1.00", "source_location": "River"}
+  },
+  {
+    "model": "catalog.brickattributes",
+    "pk": 1,
+    "fields": {"item": 4, "brick_type": "Clay", "dimensions_mm": "190x90x90", "compressive_strength_mpa": "10.50", "water_absorption_percent": "12.00"}
+  },
+  {
+    "model": "catalog.pipeattributes",
+    "pk": 1,
+    "fields": {"item": 5, "pipe_material": "PVC", "nominal_diameter": "50.00", "diameter_unit": "mm", "length_m": "4.00", "pressure_rating": "PN16"}
+  },
+  {
+    "model": "catalog.steelattributes",
+    "pk": 1,
+    "fields": {"item": 6, "steel_type": "Rebar", "diameter_mm": 12, "tensile_strength_mpa": 500}
+  },
+  {
+    "model": "catalog.paintattributes",
+    "pk": 1,
+    "fields": {"item": 7, "paint_type": "Acrylic", "base": "Water", "coverage_per_liter_sqm": "10.50", "drying_time_hours": "4.00"}
+  },
+  {
+    "model": "catalog.cableattributes",
+    "pk": 1,
+    "fields": {"item": 8, "cable_type": "Single Core", "conductor_material": "Copper", "cross_section_area_mm2": "2.50", "voltage_rating_v": 450, "insulation_type": "PVC"}
+  }
+]
